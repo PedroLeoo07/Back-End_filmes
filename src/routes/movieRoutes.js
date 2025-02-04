@@ -1,12 +1,11 @@
 const express = require("express");
 const router = express.Router();
-const songController = require("../controllers/songController");
+const movieController = require("../controllers/movieController");
 
-router.get("/songs", songController.getAllSongs);
-router.post("/songs", songController.addSong);
-router.put("/songs/:id", songController.updateSong);
-router.delete("/songs/:id", songController.deleteSong);
-router.get("/songs/top10", songController.getTop10Songs);
-router.get("/songs/:id", songController.getSongById);
+router.get("/movies", movieController.getAllMovies);
+router.post("/movies", movieController.addMovie);
+router.put("/movies/:id", movieController.updateMovie);
+router.delete("/movies/:id", movieController.deleteMovie);
+router.get("/movies/:id", movieController.getMovieById);
 
 module.exports = router;

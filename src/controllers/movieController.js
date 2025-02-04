@@ -9,68 +9,59 @@ lista.addMovie(filme1);
 lista.addMovie(new Movie('Velozes e Furiosos 7', 'James Wan', 'Universal', '15 de abril de 2015'));
 
 const router = {
-    addSong: (req, res) => {
+    addMovie: (req, res) => {
         try {
-            const { title, singer, duration, plays } =  req.body;
-            if(!title || !singer || !duration) {
-                throw new Error('Preencha todos os campos!')
+            const { title, diretor, distribuicao, lancamento } =  req.body;
+            if(!title || !diretor || !distribuicao || lancamento) {
+                throw new Error('Preencha todos os campos!!')
             }
-            const music = new Song (title, singer, duration, plays)
-            lista.addSong(music);
-            res.status(200).json({message: "Criado com sucesso"});
+            const filme = new Movie (title, diretor, distribuicao, lancamento)
+            lista.addMovie(filme);
+            res.status(200).json({message: "Filme criado com sucesso"});
         } catch (error) {
-            res.status(400).json({message: "Erro ao criar musica", error});
+            res.status(400).json({message: "Erro ao criar o filme", error});
         }
     },
 
-    getAllSongs: (req, res) => {
+    getAllMovies: (req, res) => {
         try {
-            const songs = lista.getAllSongs();
-            res.status(200).json(songs);
+            const movies = lista.getAllMovies();
+            res.status(200).json(movies);
         } catch (error) {
-            res.status(404).json({message: 'Erro ao buscar musicas', error});
+            res.status(404).json({message: 'Erro ao buscar o filme', error});
         }
     },
 
-    getSongById: (req, res) => {
+    getMovieById: (req, res) => {
         try {
             const id = req.params.id;
-            res.status(200).json(lista.getSongById(id));
+            res.status(200).json(lista.getMovieById(id));
         } catch (error) {
             res.status(404).json({
-                message: 'Erro ao buscar musica por id',
+                message: 'Erro ao buscar o filme por id',
                 error
             });
         }
     },
 
-    updateSong: (req, res) => {
+    updateMovie: (req, res) => {
         try {
-            res.status(200).json(lista.updateSong(req.params.id, req.body));
+            res.status(200).json(lista.updateMovie(req.params.id, req.body));
         } catch (error) {
             res.status(404).json('Erro ao atualizar', error)
         }
     },
 
-    deleteSong: (req, res) => {
+    deleteMovie: (req, res) => {
         try {
-            lista.deleteSong(req.params.id);
+            lista.deleteMovie(req.params.id);
             res.status(200).json({
-                message: 'Musica deletada com sucesso'
+                message: 'Filme deletado com sucesso'
             })
         } catch (error) {
-            res.status(404).json('Erro ao deletar musica', error);
+            res.status(404).json('Erro ao deletar o filme', error);
         }
     },
-
-    getTop10Songs: (req, res) => {
-        try {
-            const songs = lista.getTop10Songs();
-            res.status(200).json(songs);
-        } catch (error) {
-            res.status(404).json('Erro ao buscar Top10', error);
-        }
-    }
 
 };
 

@@ -1,6 +1,6 @@
 const express = require("express");
 const cors = require("cors");
-const songRoutes = require("./src/routes/movieRoutes");
+const movieRoutes = require("./src/routes/movieRoutes");
 
 const app = express();
 const PORT = 1417;
@@ -8,10 +8,10 @@ const PORT = 1417;
 app.use(cors());
 app.use(express.json());
 
-app.use ("/api", mvovieRoutes);
+app.use ("/api", movieRoutes);
 
 app.get("/", (req, res) => {
-    res.send("EUUUU AMOOOO BACKEND <3");
+    res.send("VAI CORINTHIANS");
 });
 
 app.listen(PORT, () =>{
