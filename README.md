@@ -23,67 +23,60 @@ O projeto consiste em uma API que permite o gerenciamento de filmes, sendo poss�
 
 ## Código em XML
 
-  <router>
-    <movie>
-        <title>Velozes e Furiosos 5</title>
-        <director>Justin Lin</director>
-        <distribution>Universal</distribution>
-        <lancamento>15 de abril de 2011</lancamento>
-    </movie>
-    <movie>
-        <title>Velozes e Furiosos 7</title>
-        <director>James Wan</director>
-        <distribution>Universal</distribution>
-        <lancamento>15 de abril de 2015</lancamento> 
-    </movie>
-    <movie>
-        <title>Velozes e Furiosos 10</title>
-        <director>James Wan</director>
-        <distribution>Universal</distribution>
-        <lancamento>15 de abril de 2015</lancamento>
-    </movie>
-    <movie>
-        <title>Velozes e Furiosos 4</title>
-        <director>James Wan</director>
-        <distribution>Universal</distribution>
-        <lancamento>15 de abril de 2015</lancamento>
-    </movie>
-    <routes>
-        <route name="addMovie">
-            <method>POST</method>
-            <endpoint>/addMovie</endpoint>
-            <params>
-                <param>title</param>
-                <param>director</param>
-                <param>distribution</param>
-                <param>releaseDate</param>
-            </params>
-        </route>
-        <route name="getAllMovies">
-            <method>GET</method>
-            <endpoint>/getAllMovies</endpoint>
-        </route>
-        <route name="getMovieById">
-            <method>GET</method>
-            <endpoint>/getMovieById/{id}</endpoint>
-            <params>
-                <param>id</param>
-            </params>
-        </route>
-        <route name="updateMovie">
-            <method>PUT</method>
-            <endpoint>/updateMovie/{id}</endpoint>
-            <params>
-                <param>id</param>
-                <param>updateData</param>
-            </params>
-        </route>
-        <route name="deleteMovie">
-            <method>DELETE</method>
-            <endpoint>/deleteMovie/{id}</endpoint>
-            <params>
-                <param>id</param>
-            </params>
-        </route>
-    </routes>
-    </router>
+  # API de Filmes - Velozes e Furiosos
+
+## Filmes
+
+### Velozes e Furiosos 5
+- **Diretor:** Justin Lin
+- **Distribuição:** Universal
+- **Lançamento:** 15 de abril de 2011
+
+### Velozes e Furiosos 7
+- **Diretor:** James Wan
+- **Distribuição:** Universal
+- **Lançamento:** 15 de abril de 2015
+
+### Velozes e Furiosos 10
+- **Diretor:** James Wan
+- **Distribuição:** Universal
+- **Lançamento:** 15 de abril de 2015
+
+### Velozes e Furiosos 4
+- **Diretor:** James Wan
+- **Distribuição:** Universal
+- **Lançamento:** 15 de abril de 2015
+
+## Rotas da API
+
+### Adicionar Filme
+- **Método:** POST
+- **Endpoint:** `/addMovie`
+- **Parâmetros:**
+  - `title`
+  - `director`
+  - `distribution`
+  - `releaseDate`
+
+### Obter Todos os Filmes
+- **Método:** GET
+- **Endpoint:** `/getAllMovies`
+
+### Obter Filme por ID
+- **Método:** GET
+- **Endpoint:** `/getMovieById/{id}`
+- **Parâmetros:**
+  - `id`
+
+### Atualizar Filme
+- **Método:** PUT
+- **Endpoint:** `/updateMovie/{id}`
+- **Parâmetros:**
+  - `id`
+  - `updateData`
+
+### Deletar Filme
+- **Método:** DELETE
+- **Endpoint:** `/deleteMovie/{id}`
+- **Parâmetros:**
+  - `id`
