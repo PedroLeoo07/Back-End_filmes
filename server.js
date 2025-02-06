@@ -11,10 +11,10 @@ app.use(express.json());
 app.use ("/api", movieRoutes);
 
 app.get("/", (req, res) => {
-    res.send("VAI CORINTHIANS");
+    res.send("Consegui Levantar");
 });
 
 app.listen(PORT, () =>{
-    console.log(`Servidor rodando na porta ${PORT}`)
+    console.log(`Servidor rodando na http://localhost ${PORT}`);
 });
 

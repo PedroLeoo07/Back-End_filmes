@@ -15,7 +15,7 @@ const router = {
     addMovie: (req, res) => {
         try {
             const { title, diretor, distribuicao, lancamento } =  req.body;
-            if(!title || !diretor || !distribuicao || lancamento) {
+            if(!title || !diretor || !distribuicao || !lancamento) {
                 throw new Error('Preencha todos os campos!!')
             }
             const filme = new Movie (title, diretor, distribuicao, lancamento)
@@ -46,15 +46,12 @@ const router = {
             });
         }
     },
-
-    updateMovie: (req, res) => {
-        try {
-            res.status(200).json(lista.updateMovie(req.params.id, req.body))
-        } catch (error) {
-            res.status(404).json('Erro ao atualizar', error)
-        }
+    updateMovie(id, updateData) {
+        const movie = this.getMovieById(id);
+        Object.assign(movie, updateData);
+        return movie;
     },
-
+    
     deleteMovie: (req, res) => {
         try {
             lista.deleteMovie(req.params.id)
