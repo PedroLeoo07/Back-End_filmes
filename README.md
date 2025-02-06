@@ -56,7 +56,7 @@ O projeto consiste em uma API que permite o gerenciamento de filmes, sendo poss√
   - `title`
   - `director`
   - `distribution`
-  - `releaseDate`
+  - `lancamento`
 
 ### Obter Todos os Filmes
 - **M√©todo:** GET
