@@ -17,7 +17,7 @@ class MovieList {
         return movie;
     }
     updateMovie(id, updateData) {
-        const movie = this.getMovieById(id);
+        const movie = getMovieById(id);
         Object.assign(movie, updateData);
         return movie;
     }
