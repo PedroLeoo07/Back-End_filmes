@@ -23,6 +23,10 @@ O projeto consiste em uma API que permite o gerenciamento de filmes, sendo poss√
 
 ## C√≥digo em XML
 
+![M](public/c√≥digo%20em%20XML.png)
+
+
+
   # API de Filmes - Velozes e Furiosos
 
 ## Filmes
@@ -80,3 +84,5 @@ O projeto consiste em uma API que permite o gerenciamento de filmes, sendo poss√
 - **Endpoint:** `/deleteMovie/{id}`
 - **Par√¢metros:**
   - `id`
+
+
